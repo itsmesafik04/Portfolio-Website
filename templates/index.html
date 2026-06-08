@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header>
+        <h1>Safik Ansari</h1>
+        <p>BSC IT Student | Python Developer | Web Developer</p>
+    </header>
+
+    <section class="about">
+        <h2>About Me</h2>
+        <p>
+            I am a passionate BSC IT student with skilled in
+            Python, Flask, HTML, CSS, JavaScript, C++, and MySQL.
+            I enjoy building web applications and learning new
+            technologies.
+        </p>
+    </section>
+
+    <section class="skills">
+        <h2>Skills</h2>
+
+        <ul>
+            <li>Python</li>
+            <li>Flask</li>
+            <li>HTML & CSS</li>
+            <li>JavaScript</li>
+            <li>C++</li>
+            <li>MySQL</li>
+        </ul>
+    </section>
+
+    <section class="projects">
+        <h2>Projects</h2>
+
+        <ul>
+            <li>Personal Finance Tracker</li>
+            <li>News Scraper CLI App</li>
+            <li>Todo CLI Application</li>
+            <li>REST API with Flask</li>
+        </ul>
+    </section>
+
+    <section class="contact">
+        <h2>Contact Me</h2>
+
+        {% if success %}
+        <p class="success">{{ success }}</p>
+        {% endif %}
+
+        <form action="/contact" method="POST">
+
+            <input type="text"
+                   name="name"
+                   placeholder="Enter Your Name"
+                   required>
+
+            <input type="email"
+                   name="email"
+                   placeholder="Enter Your Email"
+                   required>
+
+            <textarea
+                name="message"
+                placeholder="Enter Your Message"
+                required></textarea>
+
+            <button type="submit">
+                Send Message
+            </button>
+
+        </form>
+    </section>
+
+</body>
+</html>
